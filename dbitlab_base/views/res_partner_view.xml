@@ -11,6 +11,7 @@
                 <field name="customer_class"/>
                 <field name="ledger_id"/>
                 <field name="route_id"/>
+                <field name="customer_type" widget="radio"/>
             </xpath>
         </field>
     </record>

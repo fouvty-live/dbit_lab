@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_sales_order_filter" model="ir.ui.view">
+        <field name="name">sale.order.filter.dbitlab_base1</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_sales_order_filter"/>
+        <field name="arch" type="xml">
+            <filter name="my_sale_orders_filter" position="after">
+                <filter name="b2b_orders" string="B2B Orders" domain="[('partner_id.customer_type', '=', 'b2b')]"/>
+                <filter name="b2c_orders" string="B2C Orders" domain="[('partner_id.customer_type', '=', 'b2c')]"/>
+            </filter>
+        </field>
+    </record>
+</odoo>
