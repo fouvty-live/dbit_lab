@@ -6,9 +6,23 @@
         <field name="inherit_id" ref="product.product_template_form_view"/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='categ_id']" position="after">
+                <field name="mrp" widget="monetary"/>
                 <field name="group_id"/>
                 <field name="brand_id"/>
             </xpath>
+        </field>
+    </record>
+    <record id="view_product_catalog_kanban_inherit" model="ir.ui.view">
+        <field name="name">product.catalog.kanban.inherit</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_view_kanban_catalog"/>
+        <field name="arch" type="xml">
+            <div name="o_kanban_price" position="after">
+                    <div name="o_kanban_mrp">
+                        <span>MRP:$</span>
+                        <field name="mrp"/>
+                    </div>
+                </div>
         </field>
     </record>
 </odoo>

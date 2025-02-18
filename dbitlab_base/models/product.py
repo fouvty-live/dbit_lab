@@ -8,3 +8,5 @@ class ProductTemplate(models.Model):
 
     group_id = fields.Many2one('product.group', string="Product Group")
     brand_id = fields.Many2one('product.brand', string="Product Brand")
+    mrp = fields.Monetary(string="MRP")
+
